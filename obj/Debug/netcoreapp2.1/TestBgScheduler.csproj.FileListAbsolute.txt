@@ -1,0 +1,14 @@
+d:\00_CODE\dotnetCore\TestBgScheduler\bin\Debug\netcoreapp2.1\TestBgScheduler.deps.json
+d:\00_CODE\dotnetCore\TestBgScheduler\bin\Debug\netcoreapp2.1\TestBgScheduler.runtimeconfig.json
+d:\00_CODE\dotnetCore\TestBgScheduler\bin\Debug\netcoreapp2.1\TestBgScheduler.runtimeconfig.dev.json
+d:\00_CODE\dotnetCore\TestBgScheduler\bin\Debug\netcoreapp2.1\TestBgScheduler.dll
+d:\00_CODE\dotnetCore\TestBgScheduler\bin\Debug\netcoreapp2.1\TestBgScheduler.pdb
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.csprojAssemblyReference.cache
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.csproj.CoreCompileInputs.cache
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.RazorAssemblyInfo.cache
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.RazorAssemblyInfo.cs
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.AssemblyInfoInputs.cache
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.AssemblyInfo.cs
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.RazorTargetAssemblyInfo.cache
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.dll
+d:\00_CODE\dotnetCore\TestBgScheduler\obj\Debug\netcoreapp2.1\TestBgScheduler.pdb

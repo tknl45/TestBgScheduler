@@ -1,0 +1,73 @@
+namespace TestBgScheduler
+{
+    using System;
+    using System.Collections.Specialized;
+    using System.Threading.Tasks;
+    using Quartz;
+    using Quartz.Impl;
+    public class BgScheduler
+    {
+        public static async Task RunProgram()
+        {
+            try
+            {
+                // 設定排程參數
+                NameValueCollection props = new NameValueCollection
+                {
+                    { "quartz.serializer.type", "binary" }
+                };
+                StdSchedulerFactory factory = new StdSchedulerFactory(props);
+                IScheduler scheduler = await factory.GetScheduler();
+
+                // 啟用排程
+                await scheduler.Start();
+
+               
+
+                // 設定job
+                IJobDetail job = JobBuilder.Create<HelloJob>()
+                .WithIdentity("myJob", "group1") // job名稱 "myJob", 群組名稱 "group1"
+                .UsingJobData("jobSays", "你好!") // 參數名稱 "jobSays", 參數值 "你好!"
+                .UsingJobData("myFloatValue", 3.141f) // 參數名稱 "myFloatValue", 參數值 "3.141f!"
+                .Build();    
+
+                // 設定觸發原則: 每隔2分鐘,  時間區間：8am ~ 5pm, 每天
+                ITrigger trigger = TriggerBuilder.Create()
+                    .WithIdentity("trigger3", "group1")
+                    .WithCronSchedule("0 0/2 8-17 * * ?") //每隔2分鐘,  時間區間：8am ~ 5pm, 每天
+                    .ForJob("myJob", "group1")
+                .Build();
+
+                //寫進排程
+                await scheduler.ScheduleJob(job, trigger);
+
+              
+            }
+            catch (SchedulerException se)
+            {
+                await Console.Error.WriteLineAsync(se.ToString());
+            }
+        }
+
+
+        public class HelloJob : IJob
+        {
+            public async Task Execute(IJobExecutionContext context)
+            {
+                JobKey key = context.JobDetail.Key;
+
+                //傳入參數
+                JobDataMap dataMap = context.JobDetail.JobDataMap;
+                string jobSays = dataMap.GetString("jobSays");
+                float myFloatValue = dataMap.GetFloat("myFloatValue");
+                
+
+                //現在時間
+                DateTime dt = DateTime.Now;
+                string dateStr = dt.ToString();//2005-11-5 13:21:25
+
+                await Console.Out.WriteLineAsync($"[{dateStr}]{jobSays} {myFloatValue}");
+            }
+        }
+    }
+}

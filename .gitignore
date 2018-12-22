@@ -1,0 +1,18 @@
+app.log
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode
+bin/
+
+
+
+
+# Visual Studio 2015
+/bin/bash: Q: command not found
+.vs/
